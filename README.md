@@ -35,3 +35,7 @@ All final solutions were reviewed, verified and, if necessary, adjusted by the a
 ## References
 
 OpenAI, (2026), *ChatGPT* (Mar 2026) [Large language model], https://chat.openai.com/
+
+## Author
+
+asist. Robi Pritržnik, mag. inž. rač. in splet. tehnol., Fakulteta za informacijske študije v Novem mestu, študijsko leto 2025/26
