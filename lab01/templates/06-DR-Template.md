@@ -2,20 +2,20 @@
 
 ## 1. Organization Information
 
-- Organization Name:
-- Address:
-- IT Department Contact:
-- DR Plan Owner:
-- Date Created:
-- Last Updated:
+- Organization Name: BlueRiver Health Ltd.
+- Address: Two-city private healthcare provider
+- IT Department Contact: IT Manager
+- DR Plan Owner: IT Manager
+- Date Created: April 2026
+- Last Updated: April 2026
 
 ---
 
 # 2. Purpose
 
-This Disaster Recovery Plan describes the procedures and responsibilities required to recover IT systems and data after a disruption such as cyber attacks, hardware failures, or natural disasters.
+This Disaster Recovery Plan describes the procedures and responsibilities required to recover BlueRiver Health IT systems and data after disruption such as ransomware, hardware failure, or service outage.
 
-The goal is to minimize downtime and data loss while ensuring business continuity.
+The goal is to minimize patient care disruption, protect sensitive health data, and restore business operations quickly.
 
 ---
 
@@ -23,49 +23,59 @@ The goal is to minimize downtime and data loss while ensuring business continuit
 
 This plan applies to the following systems:
 
-| System       | Description            | Criticality |
-| ------------ | ---------------------- | ----------- |
-| Web server   | Public website         | High        |
-| Email system | Internal communication | Medium      |
-| File server  | Document storage       | High        |
-| ERP system   | Business management    | Critical    |
+| System                    | Description                                   | Criticality |
+| ------------------------- | --------------------------------------------- | ----------- |
+| Web server                | Public website                                | High        |
+| Microsoft 365 Email       | Email and collaboration                       | High        |
+| ERP system                | Business management                           | Critical    |
+| Patient Database          | Clinical records and patient data             | Critical    |
+| Telemedicine Platform     | Remote consultation service                   | Critical    |
+| Active Directory          | Identity and authentication infrastructure    | Critical    |
+| Local NAS Backup          | Backup storage for systems                    | Critical    |
+| Shared File Server        | Administrative and clinical document storage  | High        |
 
 ---
 
 # 4. Disaster Recovery Objectives
 
-| System       | RTO (Recovery Time Objective) | RPO (Recovery Point Objective) |
-| ------------ | ----------------------------- | ------------------------------ |
-| Web Server   | 2 hours                       | 30 minutes                     |
-| Email System | 4 hours                       | 1 hour                         |
-| File Server  | 6 hours                       | 2 hours                        |
+| System                    | RTO                         | RPO                         |
+| ------------------------- | --------------------------- | --------------------------- |
+| Patient Database          | 4 hours                     | 1 hour                      |
+| Telemedicine Platform     | 4 hours                     | 1 hour                      |
+| Active Directory          | 6 hours                     | 2 hours                     |
+| Microsoft 365 Email       | 6 hours                     | 2 hours                     |
+| Shared File Server        | 8 hours                     | 2 hours                     |
+| Local NAS Backup          | 6 hours                     | 2 hours                     |
 
 ---
 
 # 5. Disaster Recovery Team
 
-| Role                 | Name | Responsibility          | Contact |
-| -------------------- | ---- | ----------------------- | ------- |
-| DR Manager           |      | Coordinates recovery    |         |
-| System Administrator |      | Restores servers        |         |
-| Network Engineer     |      | Restores network        |         |
-| Security Officer     |      | Handles cyber incidents |         |
+| Role                 | Name / Title      | Responsibility                     | Contact |
+| -------------------- | ----------------- | ---------------------------------- | ------- |
+| DR Manager           | IT Manager        | Coordinates recovery and decisions |         |
+| System Administrator | Systems Admin     | Restores servers and VMs           |         |
+| Network Engineer     | Network Admin     | Restores network connectivity      |         |
+| Security Officer     | IT Manager        | Manages incident response          |         |
 
 ---
 
 # 6. Backup Strategy
 
-| System      | Backup Type | Frequency     | Location        |
-| ----------- | ----------- | ------------- | --------------- |
-| Database    | Full backup | Daily         | Cloud storage   |
-| Web server  | Snapshot    | Every 6 hours | Backup server   |
-| File server | Incremental | Daily         | Offsite storage |
+| System                  | Backup Type     | Frequency     | Location                  |
+| ----------------------- | --------------- | ------------- | ------------------------- |
+| Patient Database        | Full / incremental | Daily       | Local NAS + offsite      |
+| Shared File Server      | Incremental     | Daily         | Local NAS + offsite       |
+| Microsoft 365 Email     | Cloud backup    | Daily         | Vendor cloud storage      |
+| Active Directory        | System state    | Daily         | Local NAS + offsite       |
+
 
 Backup locations:
 
 - Cloud backup (AWS / Azure)
-- External backup server
+- Encrypted offsite backup storage
 - Offline backup (air-gapped storage)
+- Local NAS backup device
 
 ---
 
@@ -74,8 +84,8 @@ Backup locations:
 Possible disasters include:
 
 - Cyber attack (ransomware)
-- Hardware failure
-- Data corruption
+- Hardware or server failure
+- Data corruption or deletion
 - Network outage
 - Power outage
 - Natural disaster (fire, flood)
@@ -88,11 +98,11 @@ Possible disasters include:
 
 Steps:
 
-1. Identify failed server
-2. Activate backup infrastructure
-3. Restore latest backup
-4. Verify system integrity
-5. Reconnect users
+1. Identify the failed server or service.
+2. Notify the DR Manager and the recovery team.
+3. Activate backup infrastructure and restore the latest clean backup.
+4. Verify system integrity and data consistency.
+5. Reconnect users and confirm service restoration.
 
 ---
 
@@ -100,11 +110,11 @@ Steps:
 
 Steps:
 
-1. Disconnect infected systems
-2. Identify affected systems
-3. Restore from clean backup
-4. Reset passwords
-5. Conduct forensic analysis
+1. Isolate infected systems and affected network segments.
+2. Identify impacted systems and data stores.
+3. Confirm backup integrity and restore from clean backup.
+4. Reset compromised credentials and apply containment controls.
+5. Conduct forensic analysis and document the incident.
 
 ---
 
@@ -112,20 +122,22 @@ Steps:
 
 Steps:
 
-1. Identify missing data
-2. Retrieve backup
-3. Restore database
-4. Verify data integrity
+1. Identify the scope and cause of the data loss.
+2. Retrieve the most recent valid backup.
+3. Restore the data to a clean environment.
+4. Verify data integrity and completeness.
+5. Resume operations and update the restoration documentation.
 
 ---
 
 # 9. Communication Plan
 
-| Situation            | Responsible   | Communication Channel     |
-| -------------------- | ------------- | ------------------------- |
-| System outage        | IT department | Email / Slack             |
-| Major incident       | DR manager    | Phone / Emergency meeting |
-| Public communication | Management    | Official statement        |
+| Situation            | Responsible       | Communication Channel              |
+| -------------------- | ----------------- | ---------------------------------- |
+| System outage        | IT Manager        | Email / Phone                      |
+| Major incident       | DR Manager        | Phone / Emergency meeting          |
+| Regulatory notification | Security Officer | Email / Official letter            |
+| Public communication | Management        | Press statement / Media response   |
 
 ---
 
@@ -149,7 +161,7 @@ This plan should be reviewed:
 - After security incidents
 - At least once per year
 
-Responsible person:
+Responsible person: IT Manager
 
 ---
 

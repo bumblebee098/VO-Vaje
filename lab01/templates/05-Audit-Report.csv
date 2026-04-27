@@ -1,3 +1,7 @@
 Finding ID,Severity,Description,Risk,Recommendation,Verification
 F1,High,Shared accounts on telemedicine platform,Lack of accountability and possible unauthorized access,Implement unique accounts and MFA,Account audit and access logs
 F2,High,Backup restore procedures never tested,Potential inability to recover after ransomware,Perform restore tests twice per year,Restore test documentation
+F3,Medium,Low network security,Unavailabilty of services, Set up DDOS protections,Checking tasting and other logs
+F4,High,No formal incident response team,Delayed containment and recovery of security incidents,Define IR roles and run tabletop exercises,Tabletop exercise reports and incident checklist
+F5,Medium,Guest WiFi is not segmented,Attacker gains access to internal systems,Segment guest network and enforce firewall rules,Network configuration and guest access logs
+F6,Medium,Vendor security requirements not documented,Third-party access may expose patient data,Add vendor security clauses and conduct annual reviews,Vendor contract records and review evidence

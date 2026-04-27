@@ -1,4 +1,12 @@
 Control ID,Control Description,Type,Risk Addressed,Implementation Effort,Verification Method
 C1,Enable MFA for VPN and SaaS access,Technical,R2;R6,Medium,Identity provider configuration
-C2,Security awareness training program,Organizational,R4,Low,Training attendance records
-C3,Network segmentation of critical systems,Technical,R1,High,Network diagram and firewall rules
+C2,Security awareness training and phishing simulation,Organizational,R4,Low,Training completion records
+C3,Network segmentation of clinical and administrative systems,Technical,R1;R6;R10,High,Network diagrams and firewall policy review
+C4,Quarterly backup restore testing,Organizational,R3,Medium,Restore test reports
+C5,Endpoint Detection and Response (EDR) on workstations,Technical,R1;R7,High,EDR alert logs and incident reports
+C6,Unique user accounts and least privilege access,Organizational,R2;R9,Medium,Access reviews and audit logs
+C7,Vendor security review and contractual security clauses,Organizational,R8,Medium,Vendor assessment records
+C8,Guest WiFi isolation and firewall rules,Technical,R6,Low,Network configuration review
+C9,Formal incident response policy and team roles,Organizational,R12,Low,IR plan document and tabletop exercise results
+C10,Encrypted offsite backups,Technical,R3;R11,Medium,Backup configuration and encryption checks
+C11,Regular patch management for servers and workstations,Technical,R7;R1,Medium,Patch compliance reports

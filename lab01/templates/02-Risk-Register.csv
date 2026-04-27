@@ -1,4 +1,13 @@
 Risk ID,Asset,Threat,Vulnerability,Impact,Likelihood,Risk Score,Priority,Treatment Option,Proposed Control
-R1,Patient Database,Ransomware infection,Flat network architecture,5,3,15,High,Mitigate,Network segmentation and EDR
+R1,Patient Database,Ransomware infection,Flat network architecture,5,4,20,Critical,Mitigate,Network segmentation and EDR
 R2,Telemedicine Platform,Account takeover,Shared user accounts,5,4,20,Critical,Mitigate,MFA and unique accounts
-R3,Backup System,Data loss,Backup restore never tested,5,3,15,High,Mitigate,Regular restore testing
+R3,Backup System,Data loss,Backup restore never tested,5,4,20,Critical,Mitigate,Quarterly restore testing and backup integrity checks
+R4,Microsoft 365 Email,Phishing attack,Low security awareness,4,4,16,High,Mitigate,Security awareness training and email filtering
+R5,VPN Service,Unauthorized access,No MFA for VPN,4,3,12,High,Mitigate,MFA and access logging
+R6,Guest WiFi,Network intrusion,No segmentation,3,3,9,Medium,Mitigate,Guest network isolation and firewall rules
+R7,Medical Workstations,Malware infection,Unpatched systems,4,3,12,High,Mitigate,Patching and endpoint protection
+R8,SaaS Telemedicine Vendor,Data breach,Poor vendor security controls,4,3,12,High,Transfer,Vendor security review and contractual SLAs
+R9,Shared File Server,Data leak,Weak access controls,4,3,12,High,Mitigate,Access control policy and permission review
+R10,Laboratory Information System,Service outage,Single flat network,4,2,8,Medium,Accept,Network redundancy and monitoring
+R11,Accounting System,Data corruption,Inadequate backups,3,2,6,Medium,Mitigate,Encrypted offsite backups
+R12,Patient Registration,Service disruption,No incident response process,4,3,12,High,Mitigate,Formal incident response plan and team

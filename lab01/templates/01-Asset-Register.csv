@@ -2,3 +2,15 @@ Asset ID,Asset Name,Type,Owner,Location,Confidentiality,Integrity,Availability,C
 A1,Patient Database,Information,Medical Director,On-prem server,H,H,H,Critical
 A2,Active Directory,System,IT Manager,Server room,H,H,H,Critical
 A3,Telemedicine Platform,SaaS,Medical Director,Cloud,H,H,H,Critical
+A4,Microsoft 365 Email,Service,IT Manager,Cloud,H,M,H,High
+A5,Local NAS Backup,System,IT Manager,Server room,H,H,H,Critical
+A6,Shared File Server,Information,Administration Lead,On-prem network,H,M,H,High
+A7,Reception PCs,Hardware,Reception Lead,Reception area,M,M,H,High
+A8,Medical Workstations,Hardware,Clinical Lead,Clinic floor,H,H,H,Critical
+A9,Accounting System,Information,Finance Manager,Cloud/HQ,M,H,M,High
+A10,SaaS Telemedicine Vendor,Service,Procurement Lead,Cloud,H,M,M,High
+A11,Guest WiFi,Network,Network Admin,Reception area,M,L,M,Medium
+A12,VPN Service,Network,Network Admin,Network room,H,H,M,High
+A13,Firewall Appliance,Network,Network Admin,Server room,H,H,H,High
+A14,Mobile Tablets,Hardware,Clinical Operations,Clinic floor,M,M,M,Medium
+A15,Laboratory Information System,Information,Lab Manager,On-prem network,H,H,H,Critical
