@@ -1,4 +1,4 @@
-This folder contains all submission for class Organization's Security.
+This folder contains all submission for class Organizations' Security.
 
 Enrollment number: 35250009
 
